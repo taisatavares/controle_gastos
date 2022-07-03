@@ -2,5 +2,7 @@ from django.urls import path
 from .import views
 
 urlpatterns = [
-    path('helloworld/', views.helloWorld)
+    path('helloworld/', views.helloWorld),
+    path('', views.contaList, name='conta-list'),
+    path('yourname/<str:name>', views.yourName, name='your-name'),
 ]
