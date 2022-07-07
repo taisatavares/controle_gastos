@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Recebimento
+from .models import Despesas
+
+admin.site.register(Recebimento)
+admin.site.register(Despesas)
