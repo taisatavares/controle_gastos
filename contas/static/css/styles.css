@@ -27,7 +27,7 @@ h1 {
 }
 
 
-/* Botão de adicionar */
+/* Botão de adicionar Receitas */
 
 .add-div {
     background-color: #3476e2;
@@ -45,7 +45,10 @@ h1 {
     margin-left: 5px;
 }
 
-.add-div {
+
+/* Botão de adicionar Despesas */
+
+.add-div2 {
     background-color: #FF0000;
     cursor: pointer;
     display: inline-block;
@@ -55,10 +58,58 @@ h1 {
     margin-right: 25px;
 }
 
+.fas.fa-plus {
+    color: #FFF;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+/* Lista de receitas */
+
+.list-div {
+    padding-left: 0;
+}
+
+.receita-list {
+    padding-left: 0;
+}
+
+.receita-item {
+    list-style: none;
+    font-size: 20px;
+    height: 50px;
+    padding-top: 10px;
+    border-bottom: 1px dashed #CCC;
+}
+
+.fa-solid fa-brazilian-real-sign {
+    cursor: pointer;
+    margin: 5px;
+    font-size: 20px;
+    float: right;
+}
+
+.fa-solid fa-brazilian-real-sign {
+    color: #32CD32;
+}
+
+/* pesquisa */
+
+.fas.fa-search {
+    position: absolute;
+    top: 12px;
+    right: 26px;
+}
+
+.pesquisa-div {
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
 
 
-
-/* Lista de despesas*/
+/* Lista de despesas */
 
 .list-div {
     padding-left: 0;
