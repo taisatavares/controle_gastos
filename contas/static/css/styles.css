@@ -64,6 +64,25 @@ h1 {
     margin-left: 5px;
 }
 
+/* Botão de Resultado */
+
+.result-div {
+    background-color: #006400;
+    cursor: pointer;
+    display: inline-block;
+    color: #FFF;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 25px;
+}
+
+.fas fa-dollar-sign {
+    color: #FFF;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+
 /* Lista de receitas */
 
 .list-div {
@@ -82,16 +101,27 @@ h1 {
     border-bottom: 1px dashed #CCC;
 }
 
-.fa-solid fa-brazilian-real-sign {
+.fas.fa-trash, .fas.fa-edit {
     cursor: pointer;
     margin: 5px;
     font-size: 20px;
     float: right;
 }
 
-.fa-solid fa-brazilian-real-sign {
-    color: #32CD32;
+.fas.fa-trash {
+    color: #db1e47;
 }
+
+.fas.fa-edit {
+    color: #13c43f;
+}
+
+.fas.fa-plus {
+    color: #FFF;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
 
 /* pesquisa */
 
@@ -148,6 +178,25 @@ h1 {
     margin-left: 5px;
 }
 
+/* Lista de saldo */
+
+.list-div {
+    padding-left: 0;
+}
+
+.saldo-list {
+    padding-left: 0;
+}
+
+.saldo-item {
+    list-style: none;
+    font-size: 20px;
+    height: 50px;
+    padding-top: 10px;
+    border-bottom: 1px dashed #CCC;
+}
+
+
 /* Search */
 
 .fas.fa-search {
@@ -157,6 +206,21 @@ h1 {
 }
 
 .search-div {
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* Saldo total */
+
+.fas fa-coffee fa-border {
+    position: absolute;
+    top: 12px;
+    right: 26px;
+}
+
+.saldo-div {
     padding: 0;
     margin-top: 15px;
     margin-bottom: 15px;
