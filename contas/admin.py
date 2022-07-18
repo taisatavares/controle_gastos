@@ -1,10 +1,8 @@
 from django.contrib import admin
 
-from .models import Recebimento
-from .models import Despesas
-from .models import Resultado
+from .models import Conta
+from .models import Despesa
 
-admin.site.register(Recebimento)
-admin.site.register(Despesas)
-admin.site.register(Resultado)
+admin.site.register(Conta)
+admin.site.register(Despesa)
 

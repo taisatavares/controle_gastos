@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 
-class Recebimento(models.Model):
+class Conta(models.Model):
     titulo = models.CharField(max_length=255)
     descricao = models.TextField()
     valor = models.DecimalField(max_digits=10, decimal_places=2)
@@ -12,7 +12,8 @@ class Recebimento(models.Model):
     def __str__(self):
         return f'{self.titulo} - {self.valor}'
 
-class Despesas(models.Model):
+
+class Despesa(models.Model):
     titulo = models.CharField(max_length=255)
     descricao = models.TextField()
     valor = models.DecimalField(max_digits=10, decimal_places=2)

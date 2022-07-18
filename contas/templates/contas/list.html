@@ -12,12 +12,14 @@
         <input class="form-control" type="text" id="pesquisa" name="search" name="search" placeholder="Digite o nome da receita">
         <i class="fas fa-search"></i>
     </div>
-    <ul class="receita-list">
-        <li class="receita-item">
-            <span>Título da receita</span>
+    <ul class="conta-list">
+        {% for conta in contas %}
+        <li class="conta-item">
+            <span><a href="/conta/{{conta.id}}">{{conta.titulo}} - {{conta.valor}}</a></span>
             <span><i class="fas fa-trash"></i></span>
             <span><i class="fas fa-edit"></i></span>
         </li>
+        {% endfor %}
         </ul>
 </div>
     <div class="offset-1 col-10 list-div">
@@ -29,21 +31,13 @@
         <i class="fas fa-search"></i>
     </div>
     <ul class="despesa-list">
+        {% for despesa in despesas %}
         <li class="despesa-item">
-            <span>Título da despesa</span>
+            <span><a href="/despesa/{{despesa.id}}">{{despesa.titulo}} - {{despesa.valor}}</a></span>
             <span><i class="fas fa-trash"></i></span>
             <span><i class="fas fa-edit"></i></span>
         </li>
-        <li class="despesa-item">
-            <span>Título da despesa</span>
-            <span><i class="fas fa-trash"></i></span>
-            <span><i class="fas fa-edit"></i></span>
-        </li>
-        <li class="despesa-item">
-            <span>Título da despesa</span>
-            <span><i class="fas fa-trash"></i></span>
-            <span><i class="fas fa-edit"></i></span>
-        </li>
+        {% endfor %}
     </ul>
     </div>
     <div class="offset-1 col-10 list-div">
