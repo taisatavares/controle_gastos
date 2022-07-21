@@ -5,11 +5,8 @@ from .models import Despesa
 
 def contaList(request):
     contas = Conta.objects.all()
-    return render(request, 'contas/list.html', {'contas':contas})
-
-def despesaList(request):
     despesas = Despesa.objects.all()
-    return render(request, 'contas/list.html', {'despesas':despesas})
+    return render(request, 'contas/list.html', {'contas':contas, 'despesas':despesas})
 
 
 def helloWorld(request):
