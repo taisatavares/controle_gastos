@@ -44,10 +44,12 @@
     <div class="col-2 result-div">
         <i class="fas fa-dollar-sign"></i> Resultado
     </div>
-    <ul class="saldo-list">
-        <li class="saldo-item">
-            <span>Saldo total</span>
+    <ul class="resultado-list">
+        {% for resultado in resultados %}
+        <li class="resultado-item">
+            <span><a href="/resultado/{{resultado.id}}">{{resultado.titulo}} - {{resultado.valor}}</a></span>
         </li>
+        {% endfor %}
     </ul>
 </div>
 {% endblock %}

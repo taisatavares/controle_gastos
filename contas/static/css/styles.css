@@ -178,17 +178,17 @@ h1 {
     margin-left: 5px;
 }
 
-/* Lista de saldo */
+/* Lista de resultado */
 
 .list-div {
     padding-left: 0;
 }
 
-.saldo-list {
+.resultado-list {
     padding-left: 0;
 }
 
-.saldo-item {
+.resultado-item {
     list-style: none;
     font-size: 20px;
     height: 50px;
@@ -212,7 +212,7 @@ h1 {
     display: inline-block;
 }
 
-/* Saldo total */
+/* resultado total */
 
 .fas fa-coffee fa-border {
     position: absolute;
@@ -220,7 +220,7 @@ h1 {
     right: 26px;
 }
 
-.saldo-div {
+.resultado-div {
     padding: 0;
     margin-top: 15px;
     margin-bottom: 15px;
