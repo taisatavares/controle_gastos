@@ -29,6 +29,10 @@ h1 {
 
 /* Botão de adicionar Receitas */
 
+#add-link {
+    text-decoratiton: none;
+}
+
 .add-div {
     background-color: #3476e2;
     cursor: pointer;
@@ -47,6 +51,10 @@ h1 {
 
 
 /* Botão de adicionar Despesas */
+
+#add-link_2 {
+    text-decoratiton: none;
+}
 
 .add-div2 {
     background-color: #FF0000;
