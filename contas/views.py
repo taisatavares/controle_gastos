@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.core.paginator import Paginator
 from django.http import HttpResponse
 from .models import Conta
 from .models import Despesa
@@ -6,12 +7,17 @@ from .models import Resultado
 from decimal import Decimal
 from .forms import ContaForm
 from .forms import DespesaForm
+from django.contrib import messages
+from django.core.paginator import Paginator
 
 
 def contaList(request):
     contas = Conta.objects.all().order_by('-created_at')
-    despesas = Despesa.objects.all().order_by('-created_at')
-    resultado = calcula_resultado(contas, despesas)
+    despesas_list = Despesa.objects.all().order_by('-created_at')
+    paginator = Paginator(despesas_list,4)
+    page = request.GET.get('page')
+    despesas = paginator.get_page(page)
+    resultado = calcula_resultado(contas, despesas_list)
     return render(request, 'contas/list.html', {'contas': contas, 'despesas': despesas, 'resultado_final': resultado})
 
 
@@ -85,6 +91,22 @@ def edicaoDespesa(request, id):
             return render(request, 'contas/edicaodespesa.html', {'form': form, 'despesa': despesa})
     else:
         return render(request, 'contas/edicaodespesa.html', {'form': form, 'despesa': despesa})
+
+def deleteConta(request, id):
+    conta = get_object_or_404(Conta, pk=id)
+    conta.delete()
+
+    messages.info(request, 'Receita deletada com sucesso')
+
+    return redirect('/')
+
+def deletarDespesa(request, id):
+    despesa = get_object_or_404(Despesa, pk=id)
+    despesa.delete()
+
+    messages.info(request, 'Despesa deletada com sucesso')
+
+    return redirect('/')
 
 def helloWorld(request):
     return HttpResponse('Hello World!')

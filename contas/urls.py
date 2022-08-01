@@ -10,5 +10,7 @@ urlpatterns = [
     path('newdespesa/', views.newDespesa, name="nova-despesa"),
     path('edit/<int:id>', views.editConta, name="edit-conta"),
     path('edicao/<int:id>', views.edicaoDespesa, name="edicao-conta"),
+    path('delete/<int:id>', views.deleteConta, name="delete-conta"),
+    path('deletar/<int:id>', views.deletarDespesa, name="deletar-despesa"),
     path('yourname/<str:name>', views.yourName, name='your-name'),
 ]
