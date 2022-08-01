@@ -20,12 +20,23 @@
   </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+            {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link" href="#">Contas</a>
+                <a class="nav-link" href="/">Contas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Usuários</a>
             </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="/accounts/login">Entrar</a>
+            </li>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="/accounts/logout">Sair</a>
+            </li>
+            {% endif %}
         </ul>
         </div>
     </nav>
