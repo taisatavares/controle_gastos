@@ -6,6 +6,10 @@ h1 {
     padding: 0;
 }
 
+.container-fluid .row{
+    margin: 0;
+}
+
 /* Navbar */
 
 .navbar {
