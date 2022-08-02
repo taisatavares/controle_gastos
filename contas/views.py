@@ -13,7 +13,7 @@ from django.core.paginator import Paginator
 
 @login_required
 def contaList(request):
-    contas = Conta.objects.all().order_by('-created_at')
+    contas = Conta.objects.all().order_by('-created_at').filter(user=request.user)
     despesas_list = Despesa.objects.all().order_by('-created_at')
     paginator = Paginator(despesas_list, 4)
     page = request.GET.get('page')
@@ -27,11 +27,11 @@ def contaList(request):
 
     if search:
 
-        despesas = Despesa.objects.filter(titulo__icontains=search)
+        despesas = Despesa.objects.filter(titulo__icontains=search, user=request.user)
 
     else:
 
-        despesas_list = Despesa.objects.all().order_by('-created_at')
+        despesas_list = Despesa.objects.all().order_by('-created_at').filter(user=request.user)
         paginator = Paginator(despesas_list,4)
         page = request.GET.get('page')
         despesas = paginator.get_page(page)
@@ -66,6 +66,8 @@ def newConta(request):
           form = ContaForm(request.POST)
 
           if form.is_valid():
+
+              form.instance.user = request.user
               Conta = form.save()
               return redirect('/')
     else:
@@ -78,6 +80,8 @@ def newDespesa(request):
         form = DespesaForm(request.POST)
 
         if form.is_valid():
+
+            form.instance.user = request.user
             Despesa = form.save()
             return redirect('/')
     else:
